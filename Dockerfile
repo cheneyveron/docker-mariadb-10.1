@@ -21,7 +21,7 @@ RUN chmod +x /usr/bin/backup_db.sh \
     && echo "0 0 * * * root bash /usr/bin/backup_db.sh > /dev/null 2>&1" >> /etc/cron.d/root \
 	&& echo "20 0 * * * root apt-get update -y > /dev/null 2>&1" >> /etc/cron.d/root \
 	&& echo "# Empty Line" >> /etc/cron.d/root \
-    chmod 0644 /etc/cron.d/root \
+    	&& chmod 0644 /etc/cron.d/root
 ADD scripts/start.sh /usr/bin/start.sh
 RUN chmod +x /usr/bin/start.sh
 
