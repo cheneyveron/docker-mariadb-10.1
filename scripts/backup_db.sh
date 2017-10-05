@@ -22,7 +22,7 @@ git filter-branch --force --index-filter \
 git rm grant$DELETE.sql
 
 # new backup
-mysql -uroot -p${MYSQL_ROOT_PASSWORD} -A > $NOW.sql
+mysqldump -uroot -p${MYSQL_ROOT_PASSWORD} -A > $NOW.sql
 exp_grant.sh > grant${NOW}.sql
 
 # upload new backup
